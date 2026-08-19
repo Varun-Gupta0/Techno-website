@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Technocracy Core - Loading</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Karla:wght@400;500&amp;family=JetBrains+Mono:wght@700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-tertiary-fixed": "#001c37",
+                "inverse-surface": "#313030",
+                "background": "#fcf8f8",
+                "inverse-on-surface": "#f3f0ef",
+                "outline-variant": "#e6bdb9",
+                "surface-variant": "#e5e2e1",
+                "surface-container-lowest": "#ffffff",
+                "on-surface-variant": "#5d3f3d",
+                "surface-container-high": "#ebe7e7",
+                "tertiary-fixed": "#d2e4ff",
+                "on-error-container": "#93000a",
+                "on-background": "#1c1b1b",
+                "outline": "#916f6b",
+                "on-tertiary": "#ffffff",
+                "on-secondary-fixed-variant": "#5b4300",
+                "surface-container": "#f0edec",
+                "secondary": "#785a00",
+                "tertiary-container": "#3272b4",
+                "on-error": "#ffffff",
+                "primary-fixed": "#ffdad6",
+                "primary": "#d91f26",
+                "on-surface": "#1c1b1b",
+                "on-secondary-fixed": "#251a00",
+                "secondary-fixed-dim": "#f7be24",
+                "secondary-fixed": "#ffdf9d",
+                "on-primary-container": "#fff0ee",
+                "surface-container-low": "#f6f3f2",
+                "surface": "#fcf8f8",
+                "surface-bright": "#fcf8f8",
+                "error-container": "#ffdad6",
+                "tertiary-fixed-dim": "#a1c9ff",
+                "tertiary": "#075999",
+                "surface-tint": "#c00017",
+                "on-tertiary-container": "#eff4ff",
+                "primary-fixed-dim": "#ffb3ac",
+                "secondary-container": "#fec32b",
+                "surface-dim": "#dcd9d9",
+                "inverse-primary": "#ffb3ac",
+                "on-primary-fixed": "#410003",
+                "on-secondary-container": "#6e5200",
+                "primary-container": "#d91f26",
+                "on-primary": "#ffffff",
+                "on-tertiary-fixed-variant": "#00487f",
+                "on-primary-fixed-variant": "#93000f",
+                "error": "#ba1a1a",
+                "surface-container-highest": "#e5e2e1",
+                "on-secondary": "#ffffff"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "margin-page": "2rem",
+                "ink-weight-thin": "2px",
+                "ink-weight-thick": "4px",
+                "gutter": "1.5rem",
+                "ink-weight-heavy": "8px",
+                "panel-gap": "1rem"
+        },
+        "fontFamily": {
+                "body-md": [
+                        "Karla"
+                ],
+                "headline-lg": [
+                        "Anton"
+                ],
+                "headline-md": [
+                        "Anton"
+                ],
+                "label-caps": [
+                        "JetBrains Mono"
+                ],
+                "headline-xl": [
+                        "Anton"
+                ],
+                "body-lg": [
+                        "Karla"
+                ],
+                "headline-sm": [
+                        "Anton"
+                ],
+                "headline-lg-mobile": [
+                        "Anton"
+                ]
+        },
+        "fontSize": {
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "48px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-caps": [
+                        "14px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-xl": [
+                        "80px",
+                        {
+                                "lineHeight": "72px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-sm": [
+                        "24px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "36px",
+                        {
+                                "lineHeight": "36px",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+  /* Comic Halftone Background */
+  .bg-halftone {
+    background-image: radial-gradient(#1c1b1b 15%, transparent 16%), radial-gradient(#1c1b1b 15%, transparent 16%);
+    background-size: 8px 8px;
+    background-position: 0 0, 4px 4px;
+    background-color: #fcf8f8;
+  }
+  
+  .bg-halftone-dark {
+    background-image: radial-gradient(rgba(252, 248, 248, 0.25) 15%, transparent 16%), radial-gradient(rgba(252, 248, 248, 0.25) 15%, transparent 16%);
+    background-size: 8px 8px;
+    background-position: 0 0, 4px 4px;
+    background-color: #000000;
+  }
+  
+  .bg-grit {
+    background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.35"/%3E%3C/svg%3E');
+  }
+
+  .text-stroke-primary {
+    -webkit-text-stroke: 2px #d91f26;
+  }
+  
+  .text-stroke-black {
+    -webkit-text-stroke: 2px #000000;
+  }
+  
+  .text-stroke-massive {
+    -webkit-text-stroke: 4px #000000;
+    color: #d91f26;
+    text-shadow: 8px 8px 0px #000000;
+  }
+
+  /* Comic Panel Shadows */
+  .shadow-comic {
+    box-shadow: 8px 8px 0px 0px #1c1b1b;
+  }
+  .shadow-comic-light {
+    box-shadow: 8px 8px 0px 0px #fcf8f8;
+  }
+  
+  .comic-burst {
+    clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+    filter: drop-shadow(12px 12px 0px #000000);
+  }
+
+  /* Animation Stages */
+  @keyframes stageSequence {
+    0%, 11% { --stage: 1; opacity: 1; visibility: visible; }
+    11.1%, 22% { --stage: 2; opacity: 1; visibility: visible; }
+    22.1%, 33% { --stage: 3; opacity: 1; visibility: visible; }
+    33.1%, 44% { --stage: 4; opacity: 1; visibility: visible; }
+    44.1%, 55% { --stage: 5; opacity: 1; visibility: visible; }
+    55.1%, 66% { --stage: 6; opacity: 1; visibility: visible; }
+    66.1%, 77% { --stage: 7; opacity: 1; visibility: visible; }
+    77.1%, 88% { --stage: 8; opacity: 1; visibility: visible; }
+    88.1%, 98% { --stage: 9; opacity: 1; visibility: visible; }
+    99%, 100% { opacity: 0; visibility: hidden; }
+  }
+
+  #loading-overlay {
+    animation: fadeOut 0.5s ease-in-out 18s forwards;
+  }
+
+  @keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; pointer-events: none; }
+  }
+
+  /* Stage visibility control via JS */
+  .stage-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .stage-content.active {
+    display: flex;
+    opacity: 1;
+  }
+
+  /* Specific Animations */
+  @keyframes skewPulse {
+    0%, 100% { transform: skewX(-2deg) scale(1); }
+    50% { transform: skewX(-3deg) scale(1.05); }
+  }
+
+  @keyframes slideInRight {
+    from { transform: translateX(100%) skewX(-2deg); opacity: 0; }
+    to { transform: translateX(0) skewX(-2deg); opacity: 1; }
+  }
+
+  @keyframes zoomBurst {
+    0% { transform: scale(0.5); opacity: 0; }
+    70% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  @keyframes vibrateComic {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    20% { transform: translate(-2px, 2px) rotate(-1deg); }
+    40% { transform: translate(-2px, -2px) rotate(1deg); }
+    60% { transform: translate(2px, 2px) rotate(0deg); }
+    80% { transform: translate(2px, -2px) rotate(-1deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+  }
+  
+  @keyframes popScale {
+    0% { scale: 0.5; opacity: 0; }
+    70% { scale: 1.2; opacity: 1; }
+    100% { scale: 1; opacity: 1; }
+  }
+
+  .animate-skew-pulse {
+    animation: skewPulse 2s infinite;
+  }
+  .animate-slide-in {
+    animation: slideInRight 0.5s ease-out forwards;
+  }
+  .animate-zoom-burst {
+    animation: zoomBurst 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+  .animate-vibrate {
+    animation: vibrateComic 0.3s infinite;
+  }
+  .animate-pop {
+    animation: popScale 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    opacity: 0;
+  }
+
+  /* Speed Lines */
+  .speed-lines {
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 10px,
+      rgba(255,255,255,0.1) 10px,
+      rgba(255,255,255,0.1) 12px
+    );
+    opacity: 0.2;
+  }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen overflow-hidden selection:bg-primary selection:text-on-primary">
+<!-- Loading Overlay -->
+<div class="fixed inset-0 z-[100] bg-black bg-grit flex flex-col items-center justify-center p-gutter" id="loading-overlay">
+<div class="absolute inset-0 bg-halftone-dark opacity-80 z-0 pointer-events-none"></div>
+<!-- Progress Bar Container -->
+<div class="absolute bottom-12 w-[90%] max-w-4xl z-50">
+<div class="relative w-full h-2 bg-inverse-surface border border-surface-variant">
+<div class="absolute top-[-24px] right-0 font-label-caps text-label-caps text-surface transition-all duration-300" id="progress-text" style="right: 92%;">8%</div>
+<div class="h-full bg-primary transition-all duration-300 shadow-[0_0_10px_rgba(217,31,38,0.8)]" id="progress-bar" style="width: 8%;"></div>
+</div>
+</div>
+<!-- Stage 1: INITIALIZING... -->
+<div class="stage-content active flex-col items-center text-center space-y-6 z-10" id="stage-1">
+<div class="w-48 h-48 border-[6px] border-surface bg-black p-4 -rotate-3 animate-skew-pulse shadow-[8px_8px_0_0_#d91f26]">
+<img alt="Technocracy Logo" class="w-full h-full object-contain filter grayscale contrast-150" src="https://lh3.googleusercontent.com/aida/AP1WRLuTYJJMATvZXFhoT2qDJf05cr2mvAaufMMed6a2RmWVinhKANTGALH1o3xgWlQJJLkAJ05v1r0T4YsqSqBidp_XTaY0f9ArMgjX12enRqFSAm5spb6ikEJ-7hsjhDLabm51Szn0fN6iA0vLFXcrP-YUxYmfix5XRfAN1h5SJItccxhNKidyk2EsN61igiBBulHOoIRuX475E3uUzaG19p1N1gZakgVBucqLiYHq-KrekaCe-XywaBICDio"/>
+</div>
+<div class="bg-primary border-[6px] border-surface px-8 py-3 shadow-[8px_8px_0_0_#ffffff] skew-x-[-6deg] animate-vibrate">
+<h1 class="font-headline-xl text-headline-xl text-surface uppercase text-stroke-black">TECHNOCRACY CORE</h1>
+</div>
+<p class="font-label-caps text-label-caps text-primary bg-surface px-6 py-2 border-[4px] border-primary shadow-[4px_4px_0_0_#d91f26] skew-x-[4deg]">INITIALIZING SYSTEM...</p>
+</div>
+<!-- Stage 2: ASSEMBLING PANELS... -->
+<div class="stage-content flex-col items-center justify-center w-full max-w-5xl h-full space-y-4 z-10 relative" id="stage-2">
+<div class="flex gap-4 w-full h-1/3 p-4 relative">
+<div class="absolute top-0 right-10 z-20 rotate-[15deg]">
+<div class="font-headline-xl text-secondary-container text-[60px] text-stroke-black shadow-[4px_4px_0_0_#000] italic animate-pop" style="animation-delay: 0.2s;">CLACK!</div>
+</div>
+<div class="flex-1 border-[4px] border-dashed border-surface bg-transparent skew-x-[3deg] shadow-[4px_4px_0_0_#d91f26] animate-slide-in relative" style="animation-delay: 0.1s;">
+<div class="absolute inset-0 bg-halftone opacity-10"></div>
+</div>
+<div class="flex-1 border-[4px] border-dashed border-surface bg-transparent skew-x-[-2deg] shadow-[4px_4px_0_0_#d91f26] animate-slide-in relative" style="animation-delay: 0.2s;">
+<div class="absolute inset-0 bg-halftone opacity-10"></div>
+</div>
+</div>
+<div class="w-full h-1/3 border-[4px] border-dashed border-surface bg-transparent rotate-1 shadow-[4px_4px_0_0_#d91f26] animate-slide-in m-4 relative" style="animation-delay: 0.3s;">
+<div class="absolute bottom-4 left-10 z-20 -rotate-[10deg]">
+<div class="font-headline-xl text-primary text-[70px] text-stroke-black shadow-[4px_4px_0_0_#000] italic animate-pop" style="animation-delay: 0.4s;">THWACK!</div>
+</div>
+<div class="absolute inset-0 bg-halftone opacity-10"></div>
+</div>
+<p class="font-label-caps text-label-caps text-surface bg-primary px-6 py-2 border-[4px] border-surface absolute z-10 animate-vibrate shadow-[6px_6px_0_0_#ffffff] skew-x-[-4deg]">BUILDING FRAMEWORK...</p>
+</div>
+<!-- Stage 3: LOADING CONTENT... -->
+<div class="stage-content flex-col items-center justify-center w-full max-w-5xl h-full relative z-10" id="stage-3">
+<div class="absolute inset-0 border-[8px] border-surface bg-black shadow-[12px_12px_0_0_#d91f26] overflow-hidden -rotate-1 m-8">
+<img alt="Futuristic Urban Environment" class="w-full h-full object-cover object-center mix-blend-luminosity opacity-40 scale-110" src="https://lh3.googleusercontent.com/aida/AP1WRLvS2cawwPsOU4G0MUXPtxdhbykS2R0gWTWVORxFxMKyOHSW1Z4SfsyrcF7dNyFnuy7EoBpnEzZckwTIEw-ytE1ZxfXfIhIG0vdVwsja3EUYXn-FbUXfQv4jVPKrsGTvu1slH0HWaxW02pvxNm8WhTk1wyZ1DXOu-xvHUgkTY5ThWhPWLNi1mAduinecvF72BDpspwqXBw5TGac8pu5OseuboB97LMjoYUuAu-Ta2TS_LXraerYPhTVsemI"/>
+<div class="absolute inset-0 speed-lines"></div>
+</div>
+<div class="bg-surface p-4 border-[6px] border-primary shadow-[8px_8px_0_0_#d91f26] skew-x-[3deg] z-10 relative mt-auto mb-32 animate-vibrate">
+<p class="font-label-caps text-label-caps text-black text-xl font-bold">FETCHING DATA...</p>
+</div>
+</div>
+<!-- Stage 4: BRINGING STORY TO LIFE... -->
+<div class="stage-content flex-col items-center justify-center w-full max-w-5xl h-full relative z-10" id="stage-4">
+<div class="absolute inset-0 border-[8px] border-surface bg-black shadow-[12px_12px_0_0_#d91f26] overflow-hidden rotate-1 m-8">
+<img alt="Futuristic Urban Environment" class="w-full h-full object-cover object-center filter contrast-125 saturate-150" src="https://lh3.googleusercontent.com/aida/AP1WRLvS2cawwPsOU4G0MUXPtxdhbykS2R0gWTWVORxFxMKyOHSW1Z4SfsyrcF7dNyFnuy7EoBpnEzZckwTIEw-ytE1ZxfXfIhIG0vdVwsja3EUYXn-FbUXfQv4jVPKrsGTvu1slH0HWaxW02pvxNm8WhTk1wyZ1DXOu-xvHUgkTY5ThWhPWLNi1mAduinecvF72BDpspwqXBw5TGac8pu5OseuboB97LMjoYUuAu-Ta2TS_LXraerYPhTVsemI"/>
+<div class="absolute inset-0 bg-primary mix-blend-overlay opacity-60"></div>
+<div class="absolute inset-0 bg-halftone opacity-30 mix-blend-multiply"></div>
+</div>
+<div class="absolute top-1/4 right-1/4 z-20 rotate-[12deg]">
+<div class="font-headline-xl text-secondary-container text-[90px] text-stroke-black shadow-[6px_6px_0_0_#000] italic animate-pop">BAM!</div>
+</div>
+<div class="comic-burst bg-surface p-12 z-10 animate-vibrate relative mt-32">
+<h2 class="font-headline-lg text-headline-lg text-primary uppercase text-stroke-black text-6xl">INJECTING ENERGY...</h2>
+</div>
+</div>
+<!-- Stage 5: FINALIZING... -->
+<div class="stage-content flex-col items-center justify-center w-full h-full z-10" id="stage-5">
+<div class="bg-primary border-[8px] border-surface p-10 shadow-[12px_12px_0_0_#ffffff] -rotate-3 animate-vibrate">
+<h2 class="font-headline-xl text-headline-xl text-surface uppercase text-stroke-black">ALMOST READY...</h2>
+<div class="flex justify-center mt-6 space-x-4">
+<span class="w-6 h-6 bg-surface border-[4px] border-black shadow-[4px_4px_0_0_#000000] animate-pulse"></span>
+<span class="w-6 h-6 bg-surface border-[4px] border-black shadow-[4px_4px_0_0_#000000] animate-pulse" style="animation-delay: 0.2s;"></span>
+<span class="w-6 h-6 bg-surface border-[4px] border-black shadow-[4px_4px_0_0_#000000] animate-pulse" style="animation-delay: 0.4s;"></span>
+</div>
+</div>
+</div>
+<!-- Stage 6: PREPARING ENTRY... -->
+<div class="stage-content flex-col items-center justify-center w-full h-full relative z-10" id="stage-6">
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-[150vw] h-[150vw] bg-halftone rounded-full animate-ping opacity-30"></div>
+</div>
+<div class="comic-burst bg-primary p-16 z-10 animate-zoom-burst shadow-[16px_16px_0_0_#ffffff] rotate-2">
+<h1 class="font-headline-xl text-[100px] leading-none text-surface uppercase text-stroke-black mb-4">GET READY!</h1>
+<p class="font-label-caps text-label-caps text-black bg-surface inline-block px-6 py-2 border-[4px] border-black shadow-[4px_4px_0_0_#000000] tracking-widest -rotate-3">OPENING GATE...</p>
+</div>
+</div>
+<!-- Stage 7: PANEL LOCKED! -->
+<div class="stage-content flex-col items-center justify-center w-full h-full z-10 relative" id="stage-7">
+<div class="absolute top-1/3 left-1/4 z-20 -rotate-[15deg]">
+<div class="font-headline-xl text-secondary-container text-[100px] text-stroke-black shadow-[8px_8px_0_0_#000] italic animate-pop">ZZZAAAP!</div>
+</div>
+<div class="bg-surface border-[8px] border-primary p-12 shadow-[12px_12px_0_0_#d91f26] rotate-2 flex items-center space-x-6 animate-vibrate relative z-10 mt-16">
+<span class="material-symbols-outlined text-8xl text-black font-bold">lock</span>
+<h2 class="font-headline-xl text-[80px] leading-none text-black uppercase text-stroke-primary">SYSTEM LOCKED.</h2>
+</div>
+</div>
+<!-- Stage 8: ENTERING TECHNOCRACY... -->
+<div class="stage-content flex-col items-center justify-center text-center space-y-8 w-full h-full bg-black z-10 relative overflow-hidden" id="stage-8">
+<div class="absolute inset-0 speed-lines"></div>
+<h1 class="font-headline-xl text-headline-xl text-[12vw] leading-none text-stroke-massive skew-x-[-6deg] rotate-[-2deg] uppercase z-10 relative">TECHNOCRACY</h1>
+<h2 class="font-headline-md text-headline-sm lg:text-headline-md text-on-surface uppercase skew-x-[-4deg] pl-4 border-l-[6px] border-primary bg-secondary-container p-2 inline-block border-[4px] border-on-surface shadow-[6px_6px_0px_0px_#1c1b1b] z-10 relative animate-vibrate">
+    THE NEXT CHAPTER OF INNOVATION.
+</h2>
+<div class="bg-primary px-8 py-3 border-[4px] border-surface skew-x-[4deg] shadow-[6px_6px_0_0_#ffffff] z-10 relative mt-8">
+<p class="font-label-caps text-label-caps text-surface tracking-widest text-xl font-bold">WELCOME TO THE FUTURE.</p>
+</div>
+</div>
+<!-- Stage 9: ACCESS GRANTED! -->
+<div class="stage-content flex-col items-center justify-center w-full h-full relative overflow-hidden bg-primary z-10" id="stage-9">
+<div class="absolute inset-0 bg-halftone opacity-50 mix-blend-overlay"></div>
+<div class="comic-burst bg-surface p-20 z-10 text-center animate-zoom-burst shadow-[16px_16px_0_0_#000000]">
+<h1 class="font-headline-xl text-headline-xl text-primary uppercase text-stroke-black text-6xl md:text-[120px] leading-none mb-8">LET'S BUILD!</h1>
+<div class="bg-black inline-block px-8 py-4 border-[6px] border-primary shadow-[8px_8px_0_0_#d91f26] -rotate-2">
+<p class="font-label-caps text-label-caps text-surface text-xl font-bold tracking-wider">SCROLL DOWN TO BEGIN YOUR JOURNEY</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Mock Main Content Behind Overlay -->
+<main class="min-h-screen bg-background pt-32 px-gutter flex flex-col items-center">
+<div class="w-full max-w-6xl border-ink-weight-heavy border-inverse-surface bg-surface p-8 shadow-comic mb-12 -rotate-1">
+<h1 class="font-headline-xl text-headline-xl text-on-surface uppercase mb-4">Homepage Canvas</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">The heavy lifting is done. Welcome to the brutalist future.</p>
+</div>
+</main>
+<script>
+  // Simple Stage Manager for Loading Sequence
+  document.addEventListener("DOMContentLoaded", () => {
+    const stages = [
+      { id: 'stage-1', duration: 2000, progress: '8%' },
+      { id: 'stage-2', duration: 2000, progress: '25%' },
+      { id: 'stage-3', duration: 2000, progress: '50%' },
+      { id: 'stage-4', duration: 2000, progress: '75%' },
+      { id: 'stage-5', duration: 2000, progress: '90%' },
+      { id: 'stage-6', duration: 2000, progress: '100%' },
+      { id: 'stage-7', duration: 2000, progress: '100%' },
+      { id: 'stage-8', duration: 2000, progress: '100%' },
+      { id: 'stage-9', duration: 2000, progress: '100%' }
+    ];
+
+    const progressBar = document.getElementById('progress-bar');
+    const progressText = document.getElementById('progress-text');
+    let currentStageIndex = 0;
+
+    function nextStage() {
+      // Hide current
+      const currentEl = document.getElementById(stages[currentStageIndex].id);
+      if (currentEl) currentEl.classList.remove('active');
+
+      currentStageIndex++;
+
+      if (currentStageIndex < stages.length) {
+        // Show next
+        const nextEl = document.getElementById(stages[currentStageIndex].id);
+        if (nextEl) nextEl.classList.add('active');
+        
+        // Update Progress
+        const targetWidth = stages[currentStageIndex].progress;
+        progressBar.style.width = targetWidth;
+        progressText.innerText = targetWidth;
+        
+        // Calculate right position for text
+        const percentage = parseInt(targetWidth);
+        const rightPos = 100 - percentage;
+        progressText.style.right = `calc(${rightPos}% - 20px)`; // Adjust for text width
+
+        // Schedule next
+        setTimeout(nextStage, stages[currentStageIndex].duration);
+      } else {
+        window.location.href = 'home.html';
+      }
+    }
+
+    // Start sequence
+    setTimeout(nextStage, stages[0].duration);
+  });
+</script>
+</body></html>

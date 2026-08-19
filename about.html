@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About - Technocracy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=JetBrains+Mono:wght@700&amp;family=Karla:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#785a00",
+                        "on-secondary-container": "#6e5200",
+                        "on-primary-container": "#fff0ee",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f6f3f2",
+                        "surface-bright": "#fcf8f8",
+                        "secondary-fixed": "#ffdf9d",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#e6bdb9",
+                        "on-tertiary-fixed": "#001c37",
+                        "surface-container-high": "#ebe7e7",
+                        "secondary-container": "#fec32b",
+                        "on-surface": "#1c1b1b",
+                        "tertiary": "#075999",
+                        "surface-tint": "#c00017",
+                        "primary": "#b10015",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#a1c9ff",
+                        "secondary-fixed-dim": "#f7be24",
+                        "on-primary-fixed-variant": "#93000f",
+                        "surface-container": "#f0edec",
+                        "on-tertiary-container": "#eff4ff",
+                        "background": "#fcf8f8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#00487f",
+                        "inverse-primary": "#ffb3ac",
+                        "primary-container": "#d91f26",
+                        "on-secondary-fixed-variant": "#5b4300",
+                        "inverse-surface": "#313030",
+                        "surface-variant": "#e5e2e1",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-background": "#1c1b1b",
+                        "primary-fixed": "#ffdad6",
+                        "surface-dim": "#dcd9d9",
+                        "surface": "#fcf8f8",
+                        "on-primary-fixed": "#410003",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#d2e4ff",
+                        "on-secondary-fixed": "#251a00",
+                        "primary-fixed-dim": "#ffb3ac",
+                        "on-surface-variant": "#5d3f3d",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#3272b4",
+                        "outline": "#916f6b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "panel-gap": "1rem",
+                        "ink-weight-thick": "4px",
+                        "gutter": "1.5rem",
+                        "ink-weight-heavy": "8px",
+                        "margin-page": "2rem",
+                        "ink-weight-thin": "2px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Anton"],
+                        "headline-md": ["Anton"],
+                        "body-lg": ["Karla"],
+                        "headline-lg": ["Anton"],
+                        "body-md": ["Karla"],
+                        "headline-xl": ["Anton"],
+                        "headline-sm": ["Anton"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["14px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["36px", { "lineHeight": "36px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "48px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-xl": ["80px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .halftone-bg {
+            background-image: radial-gradient(#1c1b1b 1px, transparent 1px);
+            background-size: 8px 8px;
+        }
+        .halftone-overlay {
+            background-image: radial-gradient(rgba(0,0,0,0.2) 2px, transparent 2px);
+            background-size: 10px 10px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden min-h-screen flex flex-col pt-[88px]">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-page py-4 max-w-full bg-inverse-surface border-b-ink-weight-heavy border-on-surface shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+<div class="font-headline-sm text-headline-sm text-primary uppercase tracking-tighter">
+            TECHNOCRACY
+        </div>
+<div class="hidden md:flex space-x-6">
+<a class="font-label-caps text-label-caps text-on-primary hover:text-secondary-container hover:skew-x-[-2deg] transition-transform" href="home.html">HOME</a>
+<a class="font-label-caps text-label-caps text-secondary-container font-bold border-b-ink-weight-thick border-secondary-container hover:text-secondary-container hover:skew-x-[-2deg] transition-transform" href="about.html">ABOUT</a>
+<a class="font-label-caps text-label-caps text-on-primary hover:text-secondary-container hover:skew-x-[-2deg] transition-transform" href="events.html">EVENTS</a>
+<a class="font-label-caps text-label-caps text-on-primary hover:text-secondary-container hover:skew-x-[-2deg] transition-transform" href="#">INITIATIVES</a>
+<a class="font-label-caps text-label-caps text-on-primary hover:text-secondary-container hover:skew-x-[-2deg] transition-transform" href="team.html">TEAM</a>
+<a class="font-label-caps text-label-caps text-on-primary hover:text-secondary-container hover:skew-x-[-2deg] transition-transform" href="contact.html">CONTACT</a>
+</div>
+<button class="bg-primary-container text-on-primary font-label-caps text-label-caps px-4 py-2 border-ink-weight-thick border-on-surface shadow-[4px_4px_0px_0px_#1c1b1b] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all">
+            JOIN COMMITTEE
+        </button>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col gap-12 py-12 px-margin-page relative">
+<!-- Decorative Background Elements -->
+<div class="absolute inset-0 halftone-bg opacity-10 pointer-events-none -z-10"></div>
+<!-- Hero Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-gutter relative z-10">
+<!-- Left Panel -->
+<div class="bg-surface border-ink-weight-heavy border-on-surface shadow-[8px_8px_0px_0px_#1c1b1b] p-8 flex flex-col justify-center transform -rotate-1 relative overflow-hidden">
+<div class="absolute inset-0 halftone-overlay opacity-20"></div>
+<div class="relative z-10">
+<div class="absolute -left-4 top-1/2 -translate-y-1/2 w-[120%] h-32 bg-primary-container opacity-20 -rotate-3 blur-sm"></div>
+<h1 class="font-headline-xl text-headline-xl uppercase relative z-20 mix-blend-multiply">
+                        OUR<br/>STORY
+                    </h1>
+</div>
+</div>
+<!-- Right Panel -->
+<div class="bg-on-surface border-ink-weight-heavy border-surface shadow-[8px_8px_0px_0px_#d91f26] p-4 flex items-center justify-center transform rotate-1 relative h-[500px]">
+<img class="w-[120%] h-[120%] object-cover absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-screen grayscale contrast-150" data-alt="A gritty comic book style illustration of a cyborg or futuristic operative wearing a red scarf and goggles, crouching against a sprawling dark cyberpunk city skyline with airships, drawn with heavy black ink lines and halftone shading in black, white, and striking red accents." src="https://lh3.googleusercontent.com/aida/AP1WRLvS2cawwPsOU4G0MUXPtxdhbykS2R0gWTWVORxFxMKyOHSW1Z4SfsyrcF7dNyFnuy7EoBpnEzZckwTIEw-ytE1ZxfXfIhIG0vdVwsja3EUYXn-FbUXfQv4jVPKrsGTvu1slH0HWaxW02pvxNm8WhTk1wyZ1DXOu-xvHUgkTY5ThWhPWLNi1mAduinecvF72BDpspwqXBw5TGac8pu5OseuboB97LMjoYUuAu-Ta2TS_LXraerYPhTVsemI"/>
+</div>
+</section>
+<!-- Manifesto Panel -->
+<section class="max-w-4xl mx-auto w-full relative z-10">
+<div class="bg-surface border-ink-weight-heavy border-on-surface shadow-[10px_10px_0px_0px_#1c1b1b] p-8 md:p-12 transform -skew-x-2 rotate-1 relative">
+<div class="absolute -top-4 -left-4 w-12 h-12 bg-primary-container border-ink-weight-thick border-on-surface rounded-full flex items-center justify-center transform -rotate-12">
+<span class="material-symbols-outlined text-on-primary text-2xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg mb-6 uppercase text-primary-container">The Manifesto</h2>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+                    We are <span class="font-headline-sm text-headline-sm">Technocracy</span>. The official technical committee of NIT Raipur. Driven by ideas, forged by innovation. Our mission is to bridge the gap between imagination and engineering. We don't just write code; we build the future, one gritty, hard-fought project at a time.
+                </p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full flex flex-col items-center justify-center py-12 px-margin-page space-y-6 bg-inverse-surface border-t-ink-weight-heavy border-on-surface relative overflow-hidden z-10">
+<div class="absolute inset-0 halftone-bg opacity-5 pointer-events-none"></div>
+<div class="font-headline-md text-headline-md text-primary italic relative z-10">
+            TECHNOCRACY
+        </div>
+<div class="font-headline-sm text-headline-sm text-primary-container tracking-wider uppercase relative z-10">
+            BUILD. INNOVATE. ELEVATE.
+        </div>
+<div class="flex space-x-6 relative z-10">
+<a class="text-on-primary-container opacity-80 hover:text-primary transition-colors duration-200 font-label-caps text-label-caps hover:scale-95" href="#">PRIVACY POLICY</a>
+<a class="text-on-primary-container opacity-80 hover:text-primary transition-colors duration-200 font-label-caps text-label-caps hover:scale-95" href="#">TERMS OF SERVICE</a>
+<a class="text-on-primary-container opacity-80 hover:text-primary transition-colors duration-200 font-label-caps text-label-caps hover:scale-95" href="#">CODE OF CONDUCT</a>
+</div>
+<div class="font-body-md text-body-md text-on-primary-container opacity-60 mt-4 relative z-10">
+            © 2024 TECHNOCRACY NIT RAIPUR. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+</body></html>

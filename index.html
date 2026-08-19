@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TECHNOCRACY - The Next Chapter</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Karla:wght@400;500;700&amp;family=JetBrains+Mono:wght@700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffdad6",
+                        "on-tertiary-container": "#eff4ff",
+                        "inverse-surface": "#313030",
+                        "on-surface-variant": "#5d3f3d",
+                        "on-secondary-fixed": "#251a00",
+                        "on-tertiary-fixed": "#001c37",
+                        "on-primary-fixed": "#410003",
+                        "secondary": "#785a00",
+                        "on-secondary-fixed-variant": "#5b4300",
+                        "surface-container-high": "#ebe7e7",
+                        "tertiary-fixed": "#d2e4ff",
+                        "tertiary-container": "#3272b4",
+                        "secondary-container": "#fec32b",
+                        "on-primary-fixed-variant": "#93000f",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-secondary-container": "#6e5200",
+                        "secondary-fixed": "#ffdf9d",
+                        "outline-variant": "#e6bdb9",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#f7be24",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-variant": "#e5e2e1",
+                        "on-surface": "#1c1b1b",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1c1b1b",
+                        "surface-bright": "#fcf8f8",
+                        "surface": "#fcf8f8",
+                        "on-primary-container": "#fff0ee",
+                        "surface-tint": "#c00017",
+                        "tertiary-fixed-dim": "#a1c9ff",
+                        "on-tertiary-fixed-variant": "#00487f",
+                        "background": "#fcf8f8",
+                        "tertiary": "#075999",
+                        "primary": "#d91f26",
+                        "outline": "#916f6b",
+                        "surface-dim": "#dcd9d9",
+                        "primary-fixed-dim": "#ffb3ac",
+                        "surface-container": "#f0edec",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#ffb3ac",
+                        "primary-container": "#d91f26",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-page": "2rem",
+                        "ink-weight-heavy": "8px",
+                        "ink-weight-thick": "4px",
+                        "panel-gap": "1rem",
+                        "gutter": "1.5rem",
+                        "ink-weight-thin": "2px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Anton"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg": ["Anton"],
+                        "headline-xl": ["Anton"],
+                        "body-lg": ["Karla"],
+                        "body-md": ["Karla"],
+                        "headline-lg-mobile": ["Anton"],
+                        "headline-md": ["Anton"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["24px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-caps": ["14px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-lg": ["48px", { "lineHeight": "48px", "fontWeight": "400" }],
+                        "headline-xl": ["80px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["36px", { "lineHeight": "36px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "32px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #090909;
+            color: #fcf8f8;
+            overflow-x: hidden;
+        }
+        .comic-bg-halftone {
+            background-image: radial-gradient(#1c1b1b 15%, transparent 16%);
+            background-size: 8px 8px;
+        }
+        .comic-bg-halftone-light {
+            background-image: radial-gradient(rgba(28, 27, 27, 0.2) 15%, transparent 16%);
+            background-size: 8px 8px;
+        }
+        .comic-panel {
+            background-color: #F1E8D8;
+            border: 6px solid #1c1b1b;
+            box-shadow: 10px 10px 0px 0px #1c1b1b;
+            color: #1c1b1b;
+        }
+        .speed-lines {
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                #1c1b1b 10px,
+                #1c1b1b 12px
+            );
+            opacity: 0.1;
+        }
+        .text-stroke-massive {
+            -webkit-text-stroke: 4px #1c1b1b;
+            color: #d91f26;
+            text-shadow: 8px 8px 0px #1c1b1b;
+        }
+        .burst-button {
+            clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+            filter: drop-shadow(8px 8px 0px #1c1b1b);
+        }
+        .burst-button:hover {
+            filter: drop-shadow(12px 12px 0px #1c1b1b);
+        }
+    </style>
+</head>
+<body class="antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-page py-4 max-w-full bg-inverse-surface border-b-ink-weight-heavy border-on-surface shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+<div class="flex items-center gap-4">
+<img class="h-12 w-auto object-contain skew-x-[-2deg]" data-alt="Technocracy Logo in heavy comic ink style, red and black, mechanical elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDUL8JMjzJIfNixaI2nwltFAAqJ594y5HwLwgVkENmeOa1VClDs4VdFcu_Yny7TRuzq1QKw4VY77mTk01vzYA5j4pJJFxleJZSj97zKK2peDKJ4nfceWhBZc9paco5nhPoDYnYEWtohGwdlB_63mXbDB1z5ZdtLYgnVgkOJujjPqFPFww8D5Nu2qwTdGH7olYPzWxRFzxrPn2XMdY3pEZJhPYegWFSnGnOLxYANW702LTvpEc189OuoN6yGnPzhP3o69ZZvhxA50Y"/>
+<span class="font-headline-sm text-headline-sm text-primary uppercase tracking-tighter">TECHNOCRACY</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-secondary-container font-bold border-b-ink-weight-thick border-secondary-container font-label-caps text-label-caps hover:skew-x-[-2deg] transition-transform" href="home.html">HOME</a>
+<a class="text-on-primary font-label-caps text-label-caps hover:text-secondary-container hover:skew-x-[-2deg] transition-transform" href="about.html">ABOUT</a>
+<a class="text-on-primary font-label-caps text-label-caps hover:text-secondary-container hover:skew-x-[-2deg] transition-transform" href="events.html">EVENTS</a>
+<a class="text-on-primary font-label-caps text-label-caps hover:text-secondary-container hover:skew-x-[-2deg] transition-transform" href="#">INITIATIVES</a>
+<a class="text-on-primary font-label-caps text-label-caps hover:text-secondary-container hover:skew-x-[-2deg] transition-transform" href="team.html">TEAM</a>
+<a class="text-on-primary font-label-caps text-label-caps hover:text-secondary-container hover:skew-x-[-2deg] transition-transform" href="contact.html">CONTACT</a>
+<button class="bg-primary text-on-primary px-6 py-2 border-ink-weight-thick border-on-surface shadow-[4px_4px_0px_0px_#1c1b1b] font-label-caps text-label-caps hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all skew-x-[-2deg]">
+                JOIN COMMITTEE
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="min-h-screen pt-32 pb-16 px-margin-page relative overflow-hidden flex items-center bg-surface">
+<div class="absolute inset-0 speed-lines z-0 pointer-events-none"></div>
+<div class="absolute inset-0 comic-bg-halftone-light z-0 pointer-events-none"></div>
+<div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-gutter relative z-10">
+<!-- Left: Character -->
+<div class="relative h-[60vh] lg:h-[80vh] flex items-end justify-center">
+<div class="absolute w-full h-[80%] bottom-0 border-[8px] border-on-surface bg-inverse-surface skew-y-[3deg] rotate-[-2deg] shadow-[16px_16px_0px_0px_#1c1b1b] overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-luminosity opacity-40 scale-125" data-alt="Comic panel background" src="https://lh3.googleusercontent.com/aida/AP1WRLvS2cawwPsOU4G0MUXPtxdhbykS2R0gWTWVORxFxMKyOHSW1Z4SfsyrcF7dNyFnuy7EoBpnEzZckwTIEw-ytE1ZxfXfIhIG0vdVwsja3EUYXn-FbUXfQv4jVPKrsGTvu1slH0HWaxW02pvxNm8WhTk1wyZ1DXOu-xvHUgkTY5ThWhPWLNi1mAduinecvF72BDpspwqXBw5TGac8pu5OseuboB97LMjoYUuAu-Ta2TS_LXraerYPhTVsemI"/>
+</div>
+<img class="absolute h-[120%] w-auto max-w-none bottom-[-5%] left-[-10%] object-contain z-20 drop-shadow-[12px_12px_0px_rgba(28,27,27,1)] transition-transform duration-500 hover:scale-110 origin-bottom" data-alt="A gritty comic-book style character breaking out of a panel" src="https://lh3.googleusercontent.com/aida/AP1WRLvS2cawwPsOU4G0MUXPtxdhbykS2R0gWTWVORxFxMKyOHSW1Z4SfsyrcF7dNyFnuy7EoBpnEzZckwTIEw-ytE1ZxfXfIhIG0vdVwsja3EUYXn-FbUXfQv4jVPKrsGTvu1slH0HWaxW02pvxNm8WhTk1wyZ1DXOu-xvHUgkTY5ThWhPWLNi1mAduinecvF72BDpspwqXBw5TGac8pu5OseuboB97LMjoYUuAu-Ta2TS_LXraerYPhTVsemI"/>
+</div>
+<!-- Right: Title & Copy -->
+<div class="flex flex-col justify-center gap-8 lg:pl-12">
+<div class="flex flex-col relative z-30">
+<h1 class="font-headline-xl text-[60px] lg:text-[100px] text-stroke-massive skew-x-[-6deg] rotate-[-2deg] uppercase leading-none mb-4">
+                        TECHNOCRACY
+                    </h1>
+<h2 class="font-headline-md text-headline-sm lg:text-headline-md text-on-surface uppercase skew-x-[-4deg] pl-4 border-l-[6px] border-primary bg-secondary-container p-2 inline-block self-start border-[4px] border-on-surface shadow-[6px_6px_0px_0px_#1c1b1b]">
+                        THE NEXT CHAPTER OF INNOVATION.
+                    </h2>
+</div>
+<div class="flex flex-col gap-6 max-w-lg mt-8 relative z-20">
+<div class="comic-panel p-5 rotate-[-3deg] self-start z-10">
+<p class="font-body-lg text-body-lg text-on-surface uppercase font-bold tracking-wider">"IN A WORLD DRIVEN BY IDEAS..."</p>
+</div>
+<div class="comic-panel p-5 rotate-[3deg] self-end bg-secondary-container z-20 mt-[-20px]">
+<p class="font-body-lg text-body-lg text-on-surface uppercase font-bold tracking-wider">"THERE ARE THOSE WHO BUILD THE FUTURE."</p>
+</div>
+<div class="comic-panel p-6 rotate-[-2deg] self-start border-primary z-30 mt-[-20px] bg-inverse-surface text-primary">
+<p class="font-body-lg text-body-lg uppercase font-bold tracking-wider text-stroke-heavy">"IDEAS DON'T DIE. THEY EVOLVE."</p>
+</div>
+</div>
+<button onclick="window.location.href='loader.html'" class="mt-12 bg-primary text-on-primary px-10 py-6 border-[6px] border-on-surface shadow-[12px_12px_0px_0px_#1c1b1b] font-headline-lg text-headline-md hover:shadow-[16px_16px_0px_0px_#1c1b1b] hover:scale-105 hover:-translate-y-1 transition-all self-start flex items-center gap-2 skew-x-[-6deg] rotate-[-3deg] uppercase tracking-widest z-40">
+                    ENTER <span class="material-symbols-outlined font-bold text-4xl">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Dynamic Footer Panels Section -->
+<section class="py-20 px-margin-page bg-surface relative z-20 border-t-[8px] border-on-surface overflow-hidden">
+<div class="absolute inset-0 speed-lines z-0 pointer-events-none opacity-20"></div>
+<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+<div class="comic-panel p-8 rotate-[-4deg] hover:rotate-0 hover:scale-105 transition-all bg-primary text-on-primary flex items-center justify-center h-48 cursor-pointer">
+<h3 class="font-headline-xl text-headline-lg uppercase text-center drop-shadow-[4px_4px_0px_#1c1b1b]">AAVARTAN</h3>
+</div>
+<div class="comic-panel p-8 rotate-[3deg] hover:rotate-0 hover:scale-105 transition-all bg-secondary-container text-on-surface flex items-center justify-center h-48 cursor-pointer transform translate-y-4">
+<h3 class="font-headline-xl text-headline-lg uppercase text-center drop-shadow-[4px_4px_0px_#ffffff]">VIGYAAN</h3>
+</div>
+<div class="comic-panel p-8 rotate-[-2deg] hover:rotate-0 hover:scale-105 transition-all bg-inverse-surface text-primary flex items-center justify-center h-48 cursor-pointer border-primary">
+<h3 class="font-headline-xl text-headline-lg uppercase text-center drop-shadow-[4px_4px_0px_#1c1b1b]">IGNITE</h3>
+</div>
+</div>
+</section>
+<!-- Identity Section -->
+<section class="py-24 px-margin-page bg-inverse-surface border-y-[8px] border-on-surface relative z-20 shadow-[0px_12px_0px_0px_#1c1b1b]">
+<div class="max-w-5xl mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-secondary-container uppercase skew-x-[-2deg] drop-shadow-[6px_6px_0px_#090909]">
+                "THIS ISN'T JUST A CLUB. IT'S A LEGACY IN PROGRESS."
+            </h2>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full flex flex-col items-center justify-center py-16 px-margin-page space-y-8 bg-inverse-surface relative overflow-hidden">
+<div class="absolute inset-0 comic-bg-halftone z-0 pointer-events-none opacity-50"></div>
+<div class="relative z-10 flex flex-col items-center space-y-6">
+<h2 class="font-headline-md text-headline-lg text-primary italic drop-shadow-[4px_4px_0px_#090909] uppercase skew-x-[-4deg]">BUILD. INNOVATE. ELEVATE.</h2>
+<img class="h-20 w-auto object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300" data-alt="Technocracy Logo, simple flat mechanical design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDUL8JMjzJIfNixaI2nwltFAAqJ594y5HwLwgVkENmeOa1VClDs4VdFcu_Yny7TRuzq1QKw4VY77mTk01vzYA5j4pJJFxleJZSj97zKK2peDKJ4nfceWhBZc9paco5nhPoDYnYEWtohGwdlB_63mXbDB1z5ZdtLYgnVgkOJujjPqFPFww8D5Nu2qwTdGH7olYPzWxRFzxrPn2XMdY3pEZJhPYegWFSnGnOLxYANW702LTvpEc189OuoN6yGnPzhP3o69ZZvhxA50Y"/>
+<div class="flex gap-8">
+<a class="font-label-caps text-label-caps text-on-primary-container opacity-80 hover:text-primary hover:scale-110 transition-all duration-200" href="#">PRIVACY POLICY</a>
+<a class="font-label-caps text-label-caps text-on-primary-container opacity-80 hover:text-primary hover:scale-110 transition-all duration-200" href="#">TERMS OF SERVICE</a>
+<a class="font-label-caps text-label-caps text-on-primary-container opacity-80 hover:text-primary hover:scale-110 transition-all duration-200" href="#">CODE OF CONDUCT</a>
+</div>
+<p class="font-body-md text-body-md text-on-primary-container opacity-60 font-bold tracking-widest mt-4">© 2024 TECHNOCRACY NIT RAIPUR. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+</body></html>

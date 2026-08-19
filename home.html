@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Technocracy - NIT Raipur's Technical Committee</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Karla:wght@400;500;700&amp;family=JetBrains+Mono:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#3272b4",
+                        "surface-container-low": "#f6f3f2",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#f7be24",
+                        "outline-variant": "#e6bdb9",
+                        "on-primary-container": "#fff0ee",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#ffdf9d",
+                        "tertiary-fixed-dim": "#a1c9ff",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-bright": "#fcf8f8",
+                        "on-secondary-fixed": "#251a00",
+                        "tertiary": "#075999",
+                        "secondary": "#785a00",
+                        "outline": "#916f6b",
+                        "on-primary-fixed-variant": "#93000f",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#5b4300",
+                        "surface-container": "#f0edec",
+                        "on-surface-variant": "#5d3f3d",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#410003",
+                        "primary-fixed-dim": "#ffb3ac",
+                        "primary-container": "#d91f26",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#fec32b",
+                        "on-tertiary-fixed": "#001c37",
+                        "background": "#fcf8f8",
+                        "surface-dim": "#dcd9d9",
+                        "surface": "#fcf8f8",
+                        "inverse-on-surface": "#f3f0ef",
+                        "inverse-surface": "#313030",
+                        "primary-fixed": "#ffdad6",
+                        "on-tertiary-container": "#eff4ff",
+                        "primary": "#b10015",
+                        "tertiary-fixed": "#d2e4ff",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e5e2e1",
+                        "inverse-primary": "#ffb3ac",
+                        "on-tertiary-fixed-variant": "#00487f",
+                        "on-background": "#1c1b1b",
+                        "on-secondary-container": "#6e5200",
+                        "surface-container-high": "#ebe7e7",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#c00017",
+                        "on-surface": "#1c1b1b",
+                        "purple-comic": "#6B21A8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "ink-weight-heavy": "8px",
+                        "margin-page": "2rem",
+                        "ink-weight-thick": "4px",
+                        "ink-weight-thin": "2px",
+                        "gutter": "1.5rem",
+                        "panel-gap": "1rem"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Anton"],
+                        "body-md": ["Karla"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Anton"],
+                        "body-lg": ["Karla"],
+                        "headline-sm": ["Anton"],
+                        "headline-xl": ["Anton"],
+                        "headline-md": ["Anton"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "48px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-caps": ["14px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["36px", { "lineHeight": "36px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "headline-sm": ["24px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-xl": ["80px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "32px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .halftone-bg {
+            background-image: radial-gradient(circle, #090909 2px, transparent 2px);
+            background-size: 8px 8px;
+        }
+        .halftone-heavy {
+            background-image: radial-gradient(circle, #000 3px, transparent 3px);
+            background-size: 10px 10px;
+        }
+        .paper-noise {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        .speed-lines {
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                #1c1b1b 10px,
+                #1c1b1b 12px
+            );
+        }
+        .comic-panel {
+            border: 8px solid #1c1b1b;
+            box-shadow: 12px 12px 0px 0px #1c1b1b;
+            position: relative;
+            overflow: hidden;
+        }
+        .comic-panel-inner {
+            border: 8px solid #f6f3f2;
+            box-shadow: 8px 8px 0px 0px #1c1b1b;
+            position: relative;
+            overflow: hidden;
+        }
+        .speech-bubble::before {
+            content: '';
+            position: absolute;
+            bottom: -24px;
+            left: 20px;
+            border-width: 24px 24px 0 0;
+            border-style: solid;
+            border-color: #1c1b1b transparent transparent transparent;
+        }
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -14px;
+            left: 26px;
+            border-width: 14px 14px 0 0;
+            border-style: solid;
+            border-color: #ffffff transparent transparent transparent;
+        }
+        .brush-stroke-bg {
+            position: relative;
+            z-index: 1;
+        }
+        .brush-stroke-bg::before {
+            content: '';
+            position: absolute;
+            inset: -6px -12px;
+            background-color: #b10015;
+            z-index: -1;
+            clip-path: polygon(2% 10%, 8% 2%, 18% 12%, 28% 0%, 38% 15%, 48% 5%, 58% 18%, 68% 4%, 78% 20%, 88% 5%, 98% 15%, 100% 25%, 96% 35%, 100% 45%, 95% 55%, 100% 65%, 96% 75%, 100% 85%, 95% 95%, 85% 88%, 75% 100%, 65% 90%, 55% 100%, 45% 88%, 35% 100%, 25% 90%, 15% 100%, 5% 92%, 0% 100%, 4% 85%, 0% 75%, 5% 65%, 0% 55%, 4% 45%, 0% 35%, 5% 25%);
+        }
+        .burst-shape {
+            clip-path: polygon(50% 0%, 58% 22%, 88% 7%, 70% 32%, 100% 38%, 76% 54%, 93% 81%, 67% 76%, 74% 100%, 50% 86%, 26% 100%, 33% 76%, 7% 81%, 24% 54%, 0% 38%, 30% 32%, 12% 7%, 42% 22%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden relative">
+<div class="fixed inset-0 paper-noise z-50"></div>
+<!-- Section 1: NAVBAR -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-page py-4 max-w-full bg-inverse-surface border-b-[8px] border-on-surface shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 border-4 border-on-surface" data-alt="Technocracy red rocket and gear logo graphic comic style." src="https://lh3.googleusercontent.com/aida/AP1WRLuTYJJMATvZXFhoT2qDJf05cr2mvAaufMMed6a2RmWVinhKANTGALH1o3xgWlQJJLkAJ05v1r0T4YsqSqBidp_XTaY0f9ArMgjX12enRqFSAm5spb6ikEJ-7hsjhDLabm51Szn0fN6iA0vLFXcrP-YUxYmfix5XRfAN1h5SJItccxhNKidyk2EsN61igiBBulHOoIRuX475E3uUzaG19p1N1gZakgVBucqLiYHq-KrekaCe-XywaBICDio"/>
+<div>
+<h1 class="font-headline-sm text-headline-sm text-primary uppercase tracking-widest font-black">TECHNOCRACY</h1>
+<p class="font-label-caps text-label-caps text-on-primary-container text-[10px]">NIT RAIPUR'S TECHNICAL COMMITTEE</p>
+</div>
+</div>
+<div class="hidden md:flex gap-6">
+<a class="font-label-caps text-label-caps text-secondary-container font-bold border-b-[4px] border-secondary-container hover:skew-x-[-2deg] transition-transform uppercase tracking-wider" href="home.html">HOME</a>
+<a class="font-label-caps text-label-caps text-on-primary hover:text-secondary-container hover:skew-x-[-2deg] transition-transform uppercase tracking-wider" href="about.html">ABOUT</a>
+<a class="font-label-caps text-label-caps text-on-primary hover:text-secondary-container hover:skew-x-[-2deg] transition-transform uppercase tracking-wider" href="events.html">EVENTS</a>
+<a class="font-label-caps text-label-caps text-on-primary hover:text-secondary-container hover:skew-x-[-2deg] transition-transform uppercase tracking-wider" href="#">INITIATIVES</a>
+<a class="font-label-caps text-label-caps text-on-primary hover:text-secondary-container hover:skew-x-[-2deg] transition-transform uppercase tracking-wider" href="team.html">TEAM</a>
+<a class="font-label-caps text-label-caps text-on-primary hover:text-secondary-container hover:skew-x-[-2deg] transition-transform uppercase tracking-wider" href="contact.html">CONTACT</a>
+</div>
+<button class="md:hidden text-on-primary">
+<span class="material-symbols-outlined font-variation-settings: 'FILL' 1;">menu</span>
+</button>
+</nav>
+<!-- Section 2: HERO -->
+<section class="min-h-[90vh] pt-24 relative flex items-center justify-center bg-background overflow-hidden border-b-[8px] border-on-surface">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-90" data-alt="Gritty black and white comic book cityscape with a cyborg character in the foreground." src="https://lh3.googleusercontent.com/aida/AP1WRLvS2cawwPsOU4G0MUXPtxdhbykS2R0gWTWVORxFxMKyOHSW1Z4SfsyrcF7dNyFnuy7EoBpnEzZckwTIEw-ytE1ZxfXfIhIG0vdVwsja3EUYXn-FbUXfQv4jVPKrsGTvu1slH0HWaxW02pvxNm8WhTk1wyZ1DXOu-xvHUgkTY5ThWhPWLNi1mAduinecvF72BDpspwqXBw5TGac8pu5OseuboB97LMjoYUuAu-Ta2TS_LXraerYPhTVsemI"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"></div>
+</div>
+<div class="relative z-10 container mx-auto px-margin-page flex flex-col md:flex-row items-center justify-between">
+<div class="w-full md:w-1/2 space-y-8">
+<div class="-rotate-2">
+<h2 class="font-headline-xl text-headline-xl text-on-surface uppercase tracking-widest leading-none mb-6 drop-shadow-[6px_6px_0_#d91f26] font-black">TECHNOCRACY</h2>
+<div class="inline-block rotate-1 ml-4">
+<span class="brush-stroke-bg text-on-primary font-headline-sm text-headline-sm px-4 py-2 uppercase tracking-widest font-black">
+                            THE NEXT CHAPTER OF INNOVATION
+                        </span>
+</div>
+</div>
+<div class="space-y-6 font-headline-md text-headline-md text-on-surface tracking-widest uppercase font-black">
+<div class="bg-surface border-[6px] border-on-surface p-4 shadow-[8px_8px_0px_0px_rgba(28,27,27,1)] -skew-x-6 inline-block">
+                        IN A WORLD DRIVEN BY IDEAS...
+                    </div>
+<div class="bg-surface border-[6px] border-on-surface p-4 shadow-[8px_8px_0px_0px_rgba(28,27,27,1)] skew-x-3 inline-block ml-12">
+                        THERE ARE THOSE WHO <span class="text-primary">BUILD THE FUTURE.</span>
+</div>
+</div>
+<button class="mt-10 bg-surface text-on-surface font-headline-sm text-headline-sm px-8 py-4 border-[6px] border-on-surface shadow-[10px_10px_0px_0px_rgba(28,27,27,1)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all group rotate-1 uppercase tracking-widest font-black">
+                    EXPLORE THE WORLD <span class="inline-block group-hover:translate-x-2 transition-transform">-&gt;</span>
+</button>
+</div>
+<div class="w-full md:w-1/2 mt-12 md:mt-0 relative hidden md:block">
+<div class="absolute top-1/4 right-1/4 bg-surface border-[6px] border-on-surface p-6 rounded-2xl speech-bubble z-20 font-headline-md text-headline-md shadow-[10px_10px_0px_0px_rgba(28,27,27,1)] max-w-xs rotate-3 tracking-widest uppercase font-black">
+                    IDEAS DON'T DIE.<br/>THEY <span class="text-primary">EVOLVE!</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: OUR UNIVERSE -->
+<section class="py-24 bg-on-surface relative border-b-[8px] border-on-surface">
+<div class="absolute inset-0 halftone-heavy opacity-20"></div>
+<div class="container mx-auto px-margin-page relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-center mb-20 uppercase border-b-8 border-surface text-surface inline-block pb-2 -rotate-2 tracking-widest font-black bg-on-surface px-4">OUR UNIVERSE</h2>
+<div class="flex flex-col md:flex-row justify-center items-stretch gap-0">
+<!-- Aavartan -->
+<div class="comic-panel-inner bg-primary p-8 -rotate-3 transform hover:rotate-0 transition-transform w-full md:w-1/3 z-10 md:-mr-4">
+<h3 class="font-headline-md text-headline-md text-on-primary mb-4 bg-on-surface inline-block px-3 py-1 -skew-x-6 tracking-widest uppercase font-black border-2 border-surface">AAVARTAN</h3>
+<p class="font-body-lg text-body-lg text-on-primary font-bold mb-8">WHERE COMPETITION SPARKS EXCELLENCE.</p>
+<button class="bg-surface text-on-surface font-label-caps text-label-caps px-4 py-2 border-4 border-on-surface shadow-[6px_6px_0px_0px_rgba(28,27,27,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all font-black tracking-widest">KNOW MORE -&gt;</button>
+</div>
+<!-- Vigyaan -->
+<div class="comic-panel-inner bg-tertiary-container p-8 rotate-2 transform hover:rotate-0 transition-transform w-full md:w-1/3 z-20 md:-mt-8 md:-ml-4">
+<h3 class="font-headline-md text-headline-md text-on-primary mb-4 bg-on-surface inline-block px-3 py-1 skew-x-3 tracking-widest uppercase font-black border-2 border-surface">VIGYAAN</h3>
+<p class="font-body-lg text-body-lg text-on-primary font-bold mb-8">WHERE CURIOSITY BECOMES DISCOVERY.</p>
+<button class="bg-surface text-on-surface font-label-caps text-label-caps px-4 py-2 border-4 border-on-surface shadow-[6px_6px_0px_0px_rgba(28,27,27,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all font-black tracking-widest">KNOW MORE -&gt;</button>
+</div>
+<!-- Ignite -->
+<div class="comic-panel-inner bg-secondary-container p-8 -rotate-1 transform hover:rotate-0 transition-transform w-full md:w-1/3 z-30 md:mt-4 md:-ml-4">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 bg-surface inline-block px-3 py-1 -skew-x-2 border-4 border-on-surface tracking-widest uppercase font-black">IGNITE</h3>
+<p class="font-body-lg text-body-lg text-on-surface font-bold mb-8">WHERE IDEAS IGNITE INNOVATION.</p>
+<button class="bg-on-surface text-on-primary font-label-caps text-label-caps px-4 py-2 border-4 border-on-primary shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all font-black tracking-widest">KNOW MORE -&gt;</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: THE CREW -->
+<section class="py-24 bg-purple-comic border-b-[8px] border-on-surface relative overflow-hidden shadow-[0_0_40px_rgba(107,33,168,0.8)_inset]">
+<div class="absolute inset-0 halftone-heavy opacity-40 mix-blend-overlay"></div>
+<div class="container mx-auto px-margin-page relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="comic-panel-inner bg-tertiary p-10 -rotate-2 w-full md:w-1/2 z-20 border-[8px] border-surface shadow-[12px_12px_0px_0px_rgba(28,27,27,1)]">
+<h2 class="font-headline-lg text-headline-lg text-on-primary uppercase mb-4 tracking-widest font-black">THE CREW</h2>
+<p class="font-body-lg text-body-lg text-on-primary mb-8 font-bold">The minds behind the movement.</p>
+<button class="bg-surface text-on-surface font-headline-sm text-headline-sm px-8 py-4 border-[6px] border-on-surface shadow-[8px_8px_0px_0px_rgba(28,27,27,1)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all inline-flex items-center gap-2 uppercase tracking-widest font-black">
+                    MEET THE TEAM <span class="material-symbols-outlined font-variation-settings: 'FILL' 1; text-3xl">arrow_forward</span>
+</button>
+</div>
+<div class="w-full md:w-1/2 h-80 comic-panel-inner bg-inverse-surface border-[8px] border-surface flex items-end justify-center rotate-2 relative overflow-hidden shadow-[12px_12px_0px_0px_rgba(28,27,27,1)]">
+<div class="absolute inset-0 speed-lines opacity-20"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface to-transparent opacity-80 z-10"></div>
+<!-- Heavy Silhouettes -->
+<div class="w-full h-full flex justify-around items-end px-4 pb-0 relative z-20">
+<div class="w-20 h-40 bg-on-surface border-x-8 border-t-8 border-surface shadow-[inset_0_-20px_40px_rgba(0,0,0,1)] rounded-t-[40px]"></div>
+<div class="w-24 h-56 bg-on-surface border-x-8 border-t-8 border-surface shadow-[inset_0_-20px_40px_rgba(0,0,0,1)] rounded-t-[50px] -mb-4"></div>
+<div class="w-20 h-48 bg-on-surface border-x-8 border-t-8 border-surface shadow-[inset_0_-20px_40px_rgba(0,0,0,1)] rounded-t-[40px]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: EVENTS & HIGHLIGHTS -->
+<section class="py-24 bg-surface relative border-b-[8px] border-on-surface">
+<div class="absolute inset-0 paper-noise opacity-10"></div>
+<div class="container mx-auto px-margin-page relative z-10">
+<div class="flex flex-col lg:flex-row gap-12">
+<div class="w-full lg:w-1/3">
+<div class="comic-panel bg-secondary-fixed p-10 rotate-2 h-full flex flex-col justify-center border-[8px]">
+<h2 class="font-headline-lg text-headline-lg uppercase mb-6 leading-tight tracking-widest font-black">EVENTS &amp;<br/>HIGHLIGHTS</h2>
+<p class="font-body-lg text-body-lg font-bold border-l-[6px] border-on-surface pl-6">Witness the chaos, the creation, and the triumphs of Technocracy's flagship events.</p>
+</div>
+</div>
+<div class="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="comic-panel-inner border-[8px] border-surface h-72 -rotate-3 relative group overflow-hidden shadow-[10px_10px_0px_0px_rgba(28,27,27,1)]">
+<div class="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" data-alt="A gritty, high-contrast photo of students competing in a robotics event, illuminated by dramatic stage lights, in a 90s comic halftone style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAEUrBidlyDrX_YA0-p7S8pRVmIMVUMIYkwT5FXMd5cKPEVucn_fDCZp1yzuvKuxNcM5ws6brSap3DoCM5aUrHcC6qUQIWtpPi6a2kjPhKJD1BblfqlPI6mDr8CvaYqJZO585WWzpP4hy0nhzTrjgTr7gzQkj9kkJYdOCDZBhAu2zFY8fII3I3Xz16kpF_Gu5ke7JKEYiGpacu7vWazzFlOmcVMm5jQobAl8z0NEGjCVgJBT7h_OH8_9BlXtxBwtfXEDR0lKOJz5EQ')"></div>
+<div class="absolute inset-0 halftone-heavy mix-blend-overlay opacity-50"></div>
+<div class="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.8)]"></div>
+<div class="absolute bottom-6 left-6 bg-primary text-on-primary font-headline-sm text-headline-sm px-4 py-2 border-[4px] border-on-surface -skew-x-6 tracking-widest uppercase font-black shadow-[4px_4px_0px_0px_rgba(28,27,27,1)]">AAVARTAN HIGHLIGHTS</div>
+</div>
+<div class="comic-panel-inner border-[8px] border-surface h-72 rotate-3 relative group overflow-hidden shadow-[10px_10px_0px_0px_rgba(28,27,27,1)] mt-4 md:mt-0">
+<div class="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" data-alt="Students presenting a complex science project at a science fair, with dramatic shadows and a graphic novel ink filter applied." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1hSBSwwtSE7qf7Ai11S5sqO68VnjZpE7zjcmf2cX0ij16Anz5mkHCg4shQtfve8bIO4tF_vAcHbIMGqt93uGRarr4CfZ7rsipw8RGNv02tBdgjndNP9TpTXfjgKIm63QU_vO7KQvKSn4Ok8nONZ5bu7f5x_YJwtveEDwLTjAZc7bhAlvYTigGpeUzo-CVsbSJqev8FRCBEjB412EK6qQt4FGPRal-ylkOOur1nbMGfmvvo4Hl8L41kaEtvviDPoUFTxW53CX-y8M')"></div>
+<div class="absolute inset-0 halftone-heavy mix-blend-overlay opacity-50"></div>
+<div class="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.8)]"></div>
+<div class="absolute bottom-6 left-6 bg-tertiary-container text-on-primary font-headline-sm text-headline-sm px-4 py-2 border-[4px] border-on-surface skew-x-3 tracking-widest uppercase font-black shadow-[4px_4px_0px_0px_rgba(28,27,27,1)]">VIGYAAN SHOWCASE</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: FINAL CTA -->
+<section class="py-40 bg-primary relative overflow-hidden border-b-[8px] border-on-surface">
+<div class="absolute inset-0 speed-lines opacity-30"></div>
+<div class="absolute inset-0 halftone-heavy mix-blend-overlay opacity-20"></div>
+<div class="container mx-auto px-margin-page relative z-10 flex flex-col items-center text-center">
+<div class="relative mb-20 w-full max-w-4xl flex justify-center">
+<!-- KABOOM Burst Drop Shadow -->
+<div class="absolute inset-0 bg-on-surface transform translate-x-4 translate-y-4 burst-shape z-0 scale-105"></div>
+<!-- KABOOM Burst Main -->
+<div class="bg-surface relative z-10 flex flex-col items-center justify-center p-24 burst-shape w-full">
+<div class="absolute inset-0 halftone-bg opacity-30"></div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface uppercase leading-none tracking-widest font-black relative z-20 drop-shadow-md">
+                    THE FUTURE ISN'T WAITING.<br/><span class="text-primary drop-shadow-[4px_4px_0_#1c1b1b]">WE ARE.</span>
+</h2>
+</div>
+</div>
+<div class="comic-panel bg-inverse-surface p-10 rotate-2 max-w-2xl w-full border-[8px] shadow-[16px_16px_0px_0px_rgba(28,27,27,1)]">
+<p class="font-headline-md text-headline-md text-on-primary mb-10 tracking-widest uppercase font-black">BE A PART OF THE TECHNOCRACY LEGACY.</p>
+<button class="bg-secondary-container text-on-surface font-headline-sm text-headline-sm px-10 py-5 border-[6px] border-on-surface shadow-[10px_10px_0px_0px_rgba(28,27,27,1)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all uppercase tracking-widest font-black w-full text-center block">
+                    JOIN THE MOVEMENT -&gt;
+                </button>
+</div>
+</div>
+</section>
+<!-- Section 7: FOOTER -->
+<footer class="w-full flex flex-col items-center justify-center py-16 px-margin-page space-y-8 bg-inverse-surface border-on-surface relative overflow-hidden">
+<div class="absolute inset-0 halftone-bg opacity-10"></div>
+<div class="relative z-10 text-center w-full">
+<h2 class="font-headline-lg text-headline-lg text-primary italic mb-10 uppercase drop-shadow-[4px_4px_0_#1c1b1b] tracking-widest font-black text-6xl" style="-webkit-text-stroke: 2px #fff;">BUILD. INNOVATE. ELEVATE.</h2>
+<div class="flex flex-wrap justify-center gap-8 mb-10">
+<a class="font-label-caps text-label-caps text-on-primary-container opacity-80 hover:text-primary transition-colors duration-200 tracking-widest" href="#">PRIVACY POLICY</a>
+<a class="font-label-caps text-label-caps text-on-primary-container opacity-80 hover:text-primary transition-colors duration-200 tracking-widest" href="#">TERMS OF SERVICE</a>
+<a class="font-label-caps text-label-caps text-on-primary-container opacity-80 hover:text-primary transition-colors duration-200 tracking-widest" href="#">CODE OF CONDUCT</a>
+</div>
+<div class="flex justify-center gap-6 mb-10 text-on-primary">
+<!-- Social Icons Placeholder -->
+<div class="w-12 h-12 border-4 border-on-primary flex items-center justify-center hover:bg-primary hover:border-primary transition-colors cursor-pointer shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)]"><span class="material-symbols-outlined text-2xl">mail</span></div>
+<div class="w-12 h-12 border-4 border-on-primary flex items-center justify-center hover:bg-primary hover:border-primary transition-colors cursor-pointer shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)]"><span class="material-symbols-outlined text-2xl">link</span></div>
+<div class="w-12 h-12 border-4 border-on-primary flex items-center justify-center hover:bg-primary hover:border-primary transition-colors cursor-pointer shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)]"><span class="material-symbols-outlined text-2xl">share</span></div>
+</div>
+<p class="font-body-md text-body-md text-on-primary-container opacity-60 font-bold tracking-wider">© 2024 TECHNOCRACY NIT RAIPUR. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+</body></html>

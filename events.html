@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EVENTS - TECHNOCRACY</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Karla:ital,wght@0,400;0,500;0,700;1,400&amp;family=JetBrains+Mono:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#f0edec",
+                        "on-error": "#ffffff",
+                        "outline": "#916f6b",
+                        "on-background": "#1c1b1b",
+                        "primary-container": "#d91f26",
+                        "on-secondary-fixed": "#251a00",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#a1c9ff",
+                        "surface-container-low": "#f6f3f2",
+                        "secondary": "#785a00",
+                        "surface-variant": "#e5e2e1",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1c1b1b",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#ffdad6",
+                        "on-tertiary-fixed": "#001c37",
+                        "tertiary-fixed": "#d2e4ff",
+                        "surface-bright": "#fcf8f8",
+                        "outline-variant": "#e6bdb9",
+                        "secondary-container": "#fec32b",
+                        "secondary-fixed-dim": "#f7be24",
+                        "on-primary-container": "#fff0ee",
+                        "inverse-surface": "#313030",
+                        "tertiary": "#075999",
+                        "surface-container-high": "#ebe7e7",
+                        "on-primary-fixed": "#410003",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary-container": "#eff4ff",
+                        "on-primary-fixed-variant": "#93000f",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#3272b4",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fcf8f8",
+                        "primary": "#b10015",
+                        "on-secondary-fixed-variant": "#5b4300",
+                        "on-surface-variant": "#5d3f3d",
+                        "on-secondary-container": "#6e5200",
+                        "surface-tint": "#c00017",
+                        "surface": "#fcf8f8",
+                        "primary-fixed-dim": "#ffb3ac",
+                        "inverse-on-surface": "#f3f0ef",
+                        "secondary-fixed": "#ffdf9d",
+                        "on-tertiary-fixed-variant": "#00487f",
+                        "surface-container-highest": "#e5e2e1",
+                        "inverse-primary": "#ffb3ac",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "ink-weight-thick": "4px",
+                        "gutter": "1.5rem",
+                        "ink-weight-thin": "2px",
+                        "margin-page": "2rem",
+                        "panel-gap": "1rem",
+                        "ink-weight-heavy": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Anton"],
+                        "body-md": ["Karla"],
+                        "headline-md": ["Anton"],
+                        "headline-lg-mobile": ["Anton"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-xl": ["Anton"],
+                        "headline-lg": ["Anton"],
+                        "body-lg": ["Karla"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["24px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["36px", { "lineHeight": "36px", "fontWeight": "400" }],
+                        "label-caps": ["14px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-xl": ["80px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "48px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            background-image: radial-gradient(theme('colors.surface-variant') 20%, transparent 20%), radial-gradient(theme('colors.surface-variant') 20%, transparent 20%);
+            background-size: 8px 8px;
+            background-position: 0 0, 4px 4px;
+        }
+        .comic-shadow {
+            box-shadow: 8px 8px 0px 0px #1c1b1b;
+        }
+        .comic-border {
+            border: theme('spacing.ink-weight-thick') solid #1c1b1b;
+        }
+        .comic-border-heavy {
+            border: theme('spacing.ink-weight-heavy') solid #1c1b1b;
+        }
+        .speed-lines {
+            background: repeating-conic-gradient(from 0deg, transparent 0deg 10deg, theme('colors.on-background') 10deg 11deg);
+            opacity: 0.1;
+            mix-blend-mode: multiply;
+        }
+        .halftone-dark {
+            background-image: radial-gradient(#1c1b1b 30%, transparent 30%);
+            background-size: 4px 4px;
+        }
+        .starburst {
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen pt-[88px]">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-b-4 border-on-background bg-on-background dark:bg-on-background border-b-ink-weight-thick shadow-[8px_8px_0px_0px_#1c1b1b] flex justify-between items-center px-margin-page py-4 max-w-full">
+<a class="font-headline-md text-headline-md text-primary tracking-tighter skew-x-[-10deg]" href="#">TECHNOCRACY</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-caps text-label-caps hover:skew-x-[-3deg] hover:text-primary transition-all duration-150 transform scale-95 duration-75" href="events.html">EVENTS</a>
+<a class="text-surface-container font-label-caps text-label-caps hover:text-primary transition-colors hover:skew-x-[-3deg] hover:text-primary transition-all duration-150" href="#">ARCHIVE</a>
+<a class="text-surface-container font-label-caps text-label-caps hover:text-primary transition-colors hover:skew-x-[-3deg] hover:text-primary transition-all duration-150" href="#">MANIFESTO</a>
+<a class="text-surface-container font-label-caps text-label-caps hover:text-primary transition-colors hover:skew-x-[-3deg] hover:text-primary transition-all duration-150" href="#">PANELS</a>
+</div>
+<button class="hidden md:block bg-primary-container text-on-primary-container px-6 py-2 font-label-caps text-label-caps comic-border shadow-[4px_4px_0px_0px_#1c1b1b] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all skew-x-[-5deg]">JOIN COMMITTEE</button>
+<button class="md:hidden text-surface-container">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col gap-gutter px-margin-page py-12 md:py-24 max-w-7xl mx-auto w-full">
+<!-- HERO SPLASH -->
+<section class="relative w-full h-[614px] md:h-[716px] comic-border-heavy comic-shadow bg-surface-container overflow-hidden flex items-center justify-center skew-y-[-1deg]">
+<div class="absolute inset-0 speed-lines"></div>
+<img class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-50" data-alt="A gritty, high-contrast comic book style illustration of a futuristic cityscape with massive brutalist architecture, heavy ink lines, halftone shading, dominating the frame. The lighting is dramatic chiaroscuro, predominantly black and stark white, with aggressive slashes of vivid crimson red cutting through the scene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMbKUNya-wE-aNLgqkjZKEHX0A58vDgoxE03P78fOXqCUGYdFRC2LEKFrzPw4zwzPpYbPztadPtCgdtWyyP5L_UeS7NrQaHYLkqU6lRpnME8MlQeRq6BI4MiNI_OZpbsZ9uVshO8qLqn_gDhsDEcZjyeJbACHvI0du-ka1RVC-6HUagB0ARtZRxTG7x-ZW6kY5Q4uJNIOrgvmv_yBpevD1VSHkZhoJP_cAHAPORMmX55lW9LE6qlLnnBHoJQPIckpg7pICrqIbbrg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background via-transparent to-transparent opacity-80"></div>
+<div class="relative z-10 text-center flex flex-col items-center">
+<h1 class="font-headline-xl text-headline-xl text-primary-container tracking-tighter uppercase transform skew-x-[-5deg] drop-shadow-[4px_4px_0px_#1c1b1b] md:drop-shadow-[8px_8px_0px_#1c1b1b]">OUR BATTLES</h1>
+<div class="bg-on-background px-4 py-2 mt-4 comic-border transform skew-x-[3deg] rotate-2">
+<p class="font-label-caps text-label-caps text-surface-container">THE ARENA OF INNOVATION</p>
+</div>
+</div>
+</section>
+<!-- TIMELINE PANELS GUTTER -->
+<section class="w-full flex flex-col gap-16 py-12 bg-on-background p-8 md:p-16 comic-border-heavy comic-shadow my-8 relative overflow-hidden">
+<div class="absolute inset-0 halftone-dark opacity-50"></div>
+<!-- PANEL 1: AAVARTAN -->
+<article class="relative w-full bg-background comic-border-heavy shadow-[16px_16px_0px_0px_#d91f26] flex flex-col md:flex-row overflow-hidden transform rotate-[-1deg] hover:rotate-0 transition-transform duration-300">
+<div class="w-full md:w-1/2 h-64 md:h-auto relative border-b-8 md:border-b-0 md:border-r-8 border-on-background">
+<img class="absolute inset-0 w-full h-full object-cover grayscale contrast-150" data-alt="Dynamic, high-energy comic style drawing of intense technological competition. Heavy black ink strokes define a chaotic scene of sparks, circuitry, and focused participants hunched over hardware. Ben-Day dot patterns provide shading. The color palette is strictly black, cream white, and aggressive pops of technocracy red." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3q6-9NfUC8g1KWO-JIJ7Apc-ohe2fZ4N_DWxo8v8OEyED8pwQxDpGMfpUJAdweiYikXaRxx8t6E7vc-T5cfmXOJDgH9XdNZ_DhEFle-wO4r96x_wPWs7aG9EP7d5jeRn17i6BIV-M14X0LltJijxXbrSui_v2SwpLk80V2O7zkVZEd_iZ3m0zEJXEyAjKYWQIryKVCl7p9Bw3ZNHdS1IRu2QSatuKtVMjtWrBzrVWgptvc7GuYEnLx1-pFwz0FAF-AMikGkgoMy8"/>
+<div class="absolute inset-0 bg-primary-container mix-blend-color opacity-30"></div>
+</div>
+<div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center relative bg-background">
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-secondary-container starburst flex items-center justify-center comic-border rotate-12 z-10">
+<span class="font-headline-sm text-headline-sm text-on-background transform -rotate-12">OCT<br/>2024</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4 uppercase skew-x-[-3deg]">AAVARTAN</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6 border-l-4 border-primary pl-4">The ultimate crucible of logic. A 48-hour algorithmic warfare where protocols clash and the weak are rewritten. Prepare your syntax.</p>
+<a class="self-start bg-on-background text-surface-container px-6 py-3 font-label-caps text-label-caps comic-border hover:bg-primary-container hover:text-on-primary-container transition-colors transform skew-x-[-5deg]" href="#">VIEW DOSSIER</a>
+</div>
+</article>
+<!-- PANEL 2: VIGYAAN -->
+<article class="relative w-full bg-background comic-border-heavy shadow-[16px_16px_0px_0px_#fec32b] flex flex-col md:flex-row-reverse overflow-hidden transform rotate-[1.5deg] hover:rotate-0 transition-transform duration-300">
+<div class="w-full md:w-1/2 h-64 md:h-auto relative border-b-8 md:border-b-0 md:border-l-8 border-on-background">
+<img class="absolute inset-0 w-full h-full object-cover grayscale contrast-150" data-alt="Brutalist, graphic novel illustration of a massive, imposing robotic structure or mechanical construct being assembled. Thick, gritty ink outlines and dense crosshatching. The background is a cream colored void with dramatic black shadows. Elements of raw industry and high technology fuse together." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5XZ7iV3ZSQrD6DBzwhbpGpIRVamRXRGAK27E0WRt94rRf_NR3Y2uJeltRK99C_xRYuZGtCClIZlXmXXfkwbRhXEBUw0GWWvFXIdj063y0jVQl2RbsXOURJmJtrOGizmLZ-wg6ge1ZJDCWuB1QfP0HKffPzXXn6cDdcBtjMAYHJ1zNTVKR8FGVvPpMVGv4VfIhyhSNV0WvHp_Mhn5LlCzGMkYPwYCZacRzffv3vlw2-H4ZKDj4upBc9fsZ8__0t_fDCDOxwNvwqng"/>
+<div class="absolute inset-0 bg-secondary-container mix-blend-color opacity-30"></div>
+</div>
+<div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center relative bg-background">
+<div class="absolute -top-10 -left-10 w-32 h-32 bg-primary-container starburst flex items-center justify-center comic-border -rotate-12 z-10">
+<span class="font-headline-sm text-headline-sm text-on-primary-container transform rotate-12 text-center leading-tight">NOV<br/>2024</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4 uppercase skew-x-[-3deg]">VIGYAAN</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6 border-l-4 border-secondary-container pl-4">Hardware meets hard reality. The national science exhibition where theoretical frameworks are hammered into physical dominance. No prototypes, only weapons of progress.</p>
+<a class="self-start bg-on-background text-surface-container px-6 py-3 font-label-caps text-label-caps comic-border hover:bg-secondary-container hover:text-on-background transition-colors transform skew-x-[-5deg]" href="#">VIEW DOSSIER</a>
+</div>
+</article>
+<!-- PANEL 3: IGNITE -->
+<article class="relative w-full bg-background comic-border-heavy shadow-[16px_16px_0px_0px_#1c1b1b] flex flex-col md:flex-row overflow-hidden transform rotate-[-0.5deg] hover:rotate-0 transition-transform duration-300">
+<div class="w-full md:w-1/2 h-64 md:h-auto relative border-b-8 md:border-b-0 md:border-r-8 border-on-background">
+<img class="absolute inset-0 w-full h-full object-cover grayscale contrast-150" data-alt="Dark, moody comic book panel depicting a vast auditorium from a low angle, filled with shadows and illuminated by stark, blinding spotlights. A lone figure stands at a podium, conveying authority. Heavy chiaroscuro, thick black ink, stark white highlights, creating a tense, intellectual atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC0a4Ihp7RpPnyIqt3O_CVDAVmUXR1MUZ_3BvBeey9BtPJB2KIcZVqhqYQWytpFHNprvvM__3EK_lvmM9asLYENkfxnOnYZ1rKgq_i3ADfEG6rEkG6j1QGOtpLf8i6TtB7dOvD9P14c-AZiARpvpoE_m5YqgDpop6dwgysdCm9GC7J1vjIJfZhQPFEnDpoDFmWamSRM711JsNpFDPx-Z7q4_xBZ08bfdT4Vi8vjxUChD-kggW56x5yoKzXBqk1zwGlpJQjeqJqd_s"/>
+</div>
+<div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center relative bg-background">
+<div class="absolute -top-8 -right-8 bg-on-background text-surface-container px-6 py-2 comic-border rotate-6 z-10">
+<span class="font-label-caps text-label-caps">COMING SOON</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4 uppercase skew-x-[-3deg]">IGNITE</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6 border-l-4 border-on-background pl-4">The symposium of masters. Where industry titans dictate the future. Listen, assimilate, and execute. The blueprint for tomorrow is drafted here.</p>
+<a class="self-start bg-surface-variant text-on-background px-6 py-3 font-label-caps text-label-caps comic-border hover:bg-on-background hover:text-surface-container transition-colors transform skew-x-[-5deg]" href="#">CLASSIFIED</a>
+</div>
+</article>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto border-t-ink-weight-heavy border-on-background bg-on-background relative overflow-hidden flex flex-col items-center justify-center py-12 px-margin-page gap-gutter">
+<h2 class="font-headline-sm text-headline-sm text-primary-container">TECHNOCRACY</h2>
+<div class="flex gap-6 flex-wrap justify-center">
+<a class="text-surface-variant font-label-caps hover:text-primary-container hover:underline opacity-80 hover:opacity-100 transition-all" href="#">TERMINAL</a>
+<a class="text-surface-variant font-label-caps hover:text-primary-container hover:underline opacity-80 hover:opacity-100 transition-all" href="#">COUNCIL</a>
+<a class="text-surface-variant font-label-caps hover:text-primary-container hover:underline opacity-80 hover:opacity-100 transition-all" href="#">ENCRYPTION</a>
+</div>
+<p class="font-body-md text-body-md text-surface-variant text-center opacity-60">© 2024 TECHNOCRACY COMMITTEE. ALL RIGHTS RESERVED.</p>
+</footer>
+</body></html>

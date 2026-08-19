@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Technocracy - Contact</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Karla:wght@400;500&family=JetBrains+Mono:wght@700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton:wght@100..900&family=JetBrains+Mono:wght@100..900&family=Karla:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "surface-container-lowest": "#ffffff",
+                            "secondary-fixed": "#ffdf9d",
+                            "on-primary": "#ffffff",
+                            "secondary-container": "#fec32b",
+                            "on-primary-fixed": "#410003",
+                            "on-tertiary-fixed": "#001c37",
+                            "secondary-fixed-dim": "#f7be24",
+                            "surface": "#fcf8f8",
+                            "primary-fixed-dim": "#ffb3ac",
+                            "surface-tint": "#c00017",
+                            "surface-container-high": "#ebe7e7",
+                            "tertiary-fixed": "#d2e4ff",
+                            "on-secondary": "#ffffff",
+                            "on-error-container": "#93000a",
+                            "on-primary-fixed-variant": "#93000f",
+                            "surface-container-low": "#f6f3f2",
+                            "surface-variant": "#e5e2e1",
+                            "primary": "#b10015",
+                            "on-secondary-fixed": "#251a00",
+                            "primary-fixed": "#ffdad6",
+                            "surface-container": "#f0edec",
+                            "surface-bright": "#fcf8f8",
+                            "surface-dim": "#dcd9d9",
+                            "on-tertiary": "#ffffff",
+                            "on-surface-variant": "#5d3f3d",
+                            "surface-container-highest": "#e5e2e1",
+                            "on-surface": "#1c1b1b",
+                            "on-error": "#ffffff",
+                            "inverse-primary": "#ffb3ac",
+                            "outline-variant": "#e6bdb9",
+                            "outline": "#916f6b",
+                            "on-background": "#1c1b1b",
+                            "error-container": "#ffdad6",
+                            "primary-container": "#d91f26",
+                            "tertiary-fixed-dim": "#a1c9ff",
+                            "tertiary": "#075999",
+                            "on-tertiary-fixed-variant": "#00487f",
+                            "on-tertiary-container": "#eff4ff",
+                            "error": "#ba1a1a",
+                            "background": "#fcf8f8",
+                            "tertiary-container": "#3272b4",
+                            "on-secondary-fixed-variant": "#5b4300",
+                            "secondary": "#785a00",
+                            "on-primary-container": "#fff0ee",
+                            "inverse-surface": "#313030",
+                            "inverse-on-surface": "#f3f0ef",
+                            "on-secondary-container": "#6e5200"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "ink-weight-thick": "4px",
+                            "gutter": "1.5rem",
+                            "margin-page": "2rem",
+                            "panel-gap": "1rem",
+                            "ink-weight-heavy": "8px",
+                            "ink-weight-thin": "2px"
+                    },
+                    "fontFamily": {
+                            "body-lg": ["Karla"],
+                            "headline-xl": ["Anton"],
+                            "headline-md": ["Anton"],
+                            "body-md": ["Karla"],
+                            "label-caps": ["JetBrains Mono"],
+                            "headline-lg-mobile": ["Anton"],
+                            "headline-lg": ["Anton"],
+                            "headline-sm": ["Anton"]
+                    },
+                    "fontSize": {
+                            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
+                            "headline-xl": ["80px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                            "headline-md": ["32px", {"lineHeight": "32px", "fontWeight": "400"}],
+                            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                            "label-caps": ["14px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                            "headline-lg-mobile": ["36px", {"lineHeight": "36px", "fontWeight": "400"}],
+                            "headline-lg": ["48px", {"lineHeight": "48px", "fontWeight": "400"}],
+                            "headline-sm": ["24px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .halftone-bg {
+            background-image: radial-gradient(circle, #1c1b1b 1px, transparent 1px);
+            background-size: 8px 8px;
+            opacity: 0.15;
+        }
+        .text-stroke-black {
+            -webkit-text-stroke: 3px #1c1b1b;
+            text-stroke: 3px #1c1b1b;
+            color: #fcf8f8;
+        }
+        .shadow-block {
+            box-shadow: 12px 12px 0px 0px #1c1b1b;
+        }
+        .shadow-block-sm {
+            box-shadow: 4px 4px 0px 0px #1c1b1b;
+        }
+        .comic-burst {
+            clip-path: polygon(10% 0%, 25% 15%, 45% 5%, 65% 20%, 90% 0%, 85% 25%, 100% 50%, 85% 75%, 90% 100%, 65% 80%, 45% 95%, 25% 85%, 10% 100%, 15% 75%, 0% 50%, 15% 25%);
+        }
+        .stamp {
+            transform: rotate(-15deg);
+            border: 4px solid #d91f26;
+            color: #d91f26;
+            padding: 8px 16px;
+            font-family: 'Anton', sans-serif;
+            font-size: 32px;
+            text-transform: uppercase;
+            display: inline-block;
+            opacity: 0.8;
+            mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="6" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>');
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden relative">
+<div class="fixed inset-0 pointer-events-none halftone-bg z-[-1]"></div>
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full border-b-ink-weight-thick border-on-surface dark:border-on-surface border-b-4 shadow-[4px_4px_0px_0px_#1c1b1b] flex justify-between items-center px-gutter py-4 max-w-full bg-surface-container-low z-50">
+<div class="font-headline-lg text-headline-lg italic text-primary dark:text-primary skew-x-[-6deg]">
+            TECHNOCRACY
+        </div>
+<div class="hidden md:flex gap-6 font-headline-md text-headline-md uppercase tracking-tighter">
+<a class="text-on-surface dark:text-on-surface hover:skew-x-[-3deg] hover:text-primary transition-transform" href="home.html">HOME</a>
+<a class="text-on-surface dark:text-on-surface hover:skew-x-[-3deg] hover:text-primary transition-transform" href="about.html">ABOUT</a>
+<a class="text-on-surface dark:text-on-surface hover:skew-x-[-3deg] hover:text-primary transition-transform" href="events.html">EVENTS</a>
+<a class="text-on-surface dark:text-on-surface hover:skew-x-[-3deg] hover:text-primary transition-transform" href="#">INITIATIVES</a>
+<a class="text-on-surface dark:text-on-surface hover:skew-x-[-3deg] hover:text-primary transition-transform" href="team.html">TEAM</a>
+<a class="text-primary dark:text-primary underline decoration-ink-weight-thick underline-offset-4 hover:skew-x-[-3deg] transition-transform" href="contact.html">CONTACT</a>
+</div>
+<button class="bg-surface dark:bg-surface text-primary dark:text-primary font-headline-md text-headline-md uppercase tracking-tighter border-2 border-on-surface px-4 py-2 hover:skew-x-[-3deg] transition-transform shadow-[4px_4px_0px_0px_rgba(28,27,27,1)] active:translate-x-1 active:translate-y-1 active:shadow-none hidden lg:block">
+            JOIN COMMITTEE
+        </button>
+<button class="md:hidden">
+<span class="material-symbols-outlined text-4xl">menu</span>
+</button>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-[409px] min-h-[300px] flex items-center justify-center overflow-hidden border-b-ink-weight-heavy border-on-surface">
+<div class="absolute inset-0 bg-primary-container z-0" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px);"></div>
+<img class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-50 z-0" data-alt="A chaotic, grungy background with heavy black ink splatters, comic book speed lines converging towards the center, and a vibrant red and black halftone pattern overlay. High-contrast 90s action comic style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5oe18e6IZjU6DK7LVRCo6ksoLSjC6uCZAC1wXbgpZTM6s8qMpJcyIr0V45uY9Xg_QsPwRP5C450iLmfB6YPnAbFnOQCkifVq6fVpROR-Iw0dAuJ22bCo6GemK3QqBtjxpy8RjcjCdVSiNKg-owlyZj-kHnNFFfP3sSynF-Ctuad253evh5y81PejM9Hb8dVcd672de89nIW6Tx0HCE8-ObL_QbgYU3X6Cfft6JifazXaOdO2O5yl7YwLGkkWwh3WZARg8U5_Uv3k"/>
+<h1 class="relative z-10 font-headline-xl text-headline-xl md:text-[120px] md:leading-[100px] text-stroke-black -skew-y-3 transform drop-shadow-[8px_8px_0px_#1c1b1b]">
+            ESTABLISH LINK
+        </h1>
+</header>
+<!-- Main Content -->
+<main class="max-w-7xl mx-auto px-gutter py-margin-page my-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-panel-gap">
+<!-- Left Panel: Contact Form -->
+<section class="lg:col-span-7 bg-surface border-ink-weight-heavy border-on-surface shadow-block p-8 transform -skew-x-2 relative">
+<div class="absolute -top-4 -left-4 bg-secondary-container border-2 border-on-surface px-4 py-1 font-label-caps text-label-caps shadow-block-sm transform -skew-y-2 z-10">
+                    TRANSMISSION PROTOCOL
+                </div>
+<form class="space-y-6 mt-6 relative z-0">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="w-full relative">
+<label class="absolute -top-3 left-4 bg-on-surface text-surface font-label-caps text-label-caps px-2 py-1">IDENTIFIER</label>
+<input class="w-full bg-surface border-ink-weight-thick border-on-surface p-4 font-body-lg text-body-lg focus:outline-none focus:ring-0 focus:border-primary-container shadow-[4px_4px_0px_0px_#fec32b] mt-2" placeholder="Enter Name" type="text"/>
+</div>
+<div class="w-full relative">
+<label class="absolute -top-3 left-4 bg-on-surface text-surface font-label-caps text-label-caps px-2 py-1">NETWORK ADDRESS</label>
+<input class="w-full bg-surface border-ink-weight-thick border-on-surface p-4 font-body-lg text-body-lg focus:outline-none focus:ring-0 focus:border-primary-container shadow-[4px_4px_0px_0px_#fec32b] mt-2" placeholder="Enter Email" type="email"/>
+</div>
+</div>
+<div class="w-full relative">
+<label class="absolute -top-3 left-4 bg-on-surface text-surface font-label-caps text-label-caps px-2 py-1">DIRECTIVE</label>
+<input class="w-full bg-surface border-ink-weight-thick border-on-surface p-4 font-body-lg text-body-lg focus:outline-none focus:ring-0 focus:border-primary-container shadow-[4px_4px_0px_0px_#fec32b] mt-2" placeholder="Subject" type="text"/>
+</div>
+<div class="w-full relative">
+<label class="absolute -top-3 left-4 bg-on-surface text-surface font-label-caps text-label-caps px-2 py-1">DATA PAYLOAD</label>
+<textarea class="w-full bg-surface border-ink-weight-thick border-on-surface p-4 font-body-lg text-body-lg focus:outline-none focus:ring-0 focus:border-primary-container shadow-[4px_4px_0px_0px_#fec32b] mt-2 resize-none" placeholder="Enter Message..." rows="5"></textarea>
+</div>
+<div class="flex justify-end mt-8 relative">
+<!-- Decorative background burst -->
+<div class="absolute -right-4 -bottom-4 w-48 h-20 bg-on-surface comic-burst z-0"></div>
+<button class="relative bg-primary-container text-surface font-headline-md text-headline-md px-10 py-4 comic-burst z-10 hover:scale-105 transition-transform duration-100 ease-in-out border-4 border-on-surface" type="button">
+                            TRANSMIT
+                        </button>
+</div>
+</form>
+</section>
+<!-- Right Panel: Dossier -->
+<aside class="lg:col-span-5 bg-on-surface text-surface p-8 border-ink-weight-heavy border-on-surface transform skew-y-1 relative mt-12 lg:mt-0">
+<div class="stamp absolute top-4 right-4 z-20">ARCHIVAL</div>
+<h2 class="font-headline-lg text-headline-lg text-primary-container mb-6 border-b-4 border-surface pb-2 inline-block">
+                    CLASSIFIED DOSSIER
+                </h2>
+<div class="font-label-caps text-label-caps space-y-4 text-surface-variant">
+<p class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-container">location_on</span> > LOCATION: NIT RAIPUR</p>
+<p class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary-container">shield</span> > STATUS: SECURE</p>
+<p class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-fixed-dim">schedule</span> > UPTIME: 99.9%</p>
+</div>
+<div class="mt-8 border-t-2 border-surface-variant border-dashed pt-4">
+<h3 class="font-headline-sm text-headline-sm text-surface mb-4">ENCRYPTED LINKS</h3>
+<ul class="space-y-3 font-label-caps text-label-caps">
+<li>
+<a class="flex items-center gap-3 hover:text-primary-container hover:translate-x-2 transition-transform group" href="#">
+<span class="w-8 h-8 bg-surface text-on-surface flex items-center justify-center border-2 border-surface group-hover:border-primary-container">
+<span class="material-symbols-outlined text-sm">link</span>
+</span>
+                                [NODE 01: TERMINAL]
+                            </a>
+</li>
+<li>
+<a class="flex items-center gap-3 hover:text-primary-container hover:translate-x-2 transition-transform group" href="#">
+<span class="w-8 h-8 bg-surface text-on-surface flex items-center justify-center border-2 border-surface group-hover:border-primary-container">
+<span class="material-symbols-outlined text-sm">hub</span>
+</span>
+                                [NODE 02: COMM-NET]
+                            </a>
+</li>
+</ul>
+</div>
+<div class="absolute bottom-0 right-0 w-32 h-32 opacity-20 pointer-events-none">
+<img class="w-full h-full object-contain" data-alt="A stark black and white halftone rendering of a skull integrated with mechanical wires and gears, brutalist comic style icon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyYpjpijKespCIHlhAWHUS3AZ4-GVPZDCgpSSU49bSXfS7g9wbRSSURU9ErHsWhfxf4xKpgj30t-QDfqu_IuNeSOloLqtz_A-fk6xAeZl2myz5XH2CpKyYyUGjF1gWh9UyZrhkQwbY-Ttw5E0bgiA2WAO-GYWq5pBaZ-36otV-WT6cAhBZtLQKa9EviCM63YDQw11DYc-1_kJgZNzF6-dCHTDvA4EJCFYgILCnliJPxssH-DXI-N6KzAbvCS68Uwzy0F4NrEWfb4g"/>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t-ink-weight-heavy border-on-surface dark:border-on-surface bg-on-surface dark:bg-on-surface relative overflow-hidden before:absolute before:inset-0 before:bg-[radial-gradient(#5d3f3d_1px,transparent_1px)] before:[background-size:4px_4px] before:opacity-20 flex flex-col md:flex-row justify-between items-center p-margin-page gap-panel-gap mt-20">
+<div class="font-headline-sm text-headline-sm text-surface dark:text-surface z-10 relative">
+            TECHNOCRACY
+        </div>
+<div class="font-label-caps text-label-caps text-surface dark:text-surface text-center z-10 relative">
+            © 199X TECHNOCRACY TECHNICAL COMMITTEE. ARCHIVAL DATA SECURED.
+        </div>
+<div class="flex gap-4 font-label-caps text-label-caps z-10 relative">
+<a class="text-surface-variant dark:text-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">PRIVACY PROTOCOL</a>
+<a class="text-surface-variant dark:text-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">TERMS OF ENGAGEMENT</a>
+<a class="text-surface-variant dark:text-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">SYSTEM STATUS</a>
+</div>
+</footer>
+</body></html>
